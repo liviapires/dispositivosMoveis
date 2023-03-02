@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-class DeleteProductController{
+class DeleteProductController {
     async handle(request: Request, response: Response){
         return response.json("Deleted Resource");
     }

@@ -2,22 +2,22 @@ import { Request, Response } from "express";
 
 class ListCategoryController{
     async handle(request: Request, response: Response){
-        const category = [
+        const categories = [
             { 
                 "id": "1",
-                "name": "Fruit"
+                "name": "Fruits"
             },
             { 
                 "id": "2",
-                "name": "Instrument"
+                "name": "Vegetables"
             },
             { 
                 "id": "3",
-                "name": "Clothing"
+                "name": "Meat"
             }
         ];
 
-        return response.json(category);
+        return response.json(categories);
     }
 }
 

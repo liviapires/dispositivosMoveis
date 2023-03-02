@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
 class ListProductController{
     async handle(request: Request, response: Response){
@@ -15,7 +15,7 @@ class ListProductController{
                 "name": "Orange",
                 "description": "Orange Fruit",
                 "price": "0.50",
-                "url": "www.apple.com"
+                "url": "www.orange.com"
             },
             { 
                 "id": "3",
