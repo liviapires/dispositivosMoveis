@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { SalesRepositories } from "../repositories/SalesRepositories";
+import { SalesRepositories } from "../../repositories/SalesRepositories";
 import { classToPlain } from "class-transformer";
 
 class ListSaleService {
