@@ -33,7 +33,7 @@ const updateSalesController = new UpdateSalesController();
 const router = Router();
 
 router.post("/categories", createCategoryController.handle);
-router.delete("/categories", deleteCategoryController.handle);
+router.delete("/categories/:id", deleteCategoryController.handle);
 router.get("/categories", listCategoryController.handle);
 router.put("/categories", updateCategoryController.handle);
 
