@@ -38,7 +38,7 @@ router.get("/categories", listCategoryController.handle);
 router.put("/categories", updateCategoryController.handle);
 
 router.post("/products", createProductController.handle);
-router.delete("/products", deleteProductController.handle);
+router.delete("/products/:id", deleteProductController.handle);
 router.get("/products", listProductController.handle);
 router.put("/products", updateProductController.handle);
 
