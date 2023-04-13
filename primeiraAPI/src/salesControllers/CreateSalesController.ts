@@ -2,11 +2,10 @@ import { Request, Response } from "express";
 
 class CreateSalesController {
     async handle(request: Request, response: Response) {
-        const { id, productId, userId, total, desc, obs} = request.body;
+        const { id, productId, total, desc, obs} = request.body;
 
         console.log(id);
         console.log(productId);
-        console.log(userId);
         console.log(total);
         console.log(desc);
         console.log(obs);
@@ -14,7 +13,6 @@ class CreateSalesController {
         const sales = {
             id: id,
             productId: productId,
-            userId: userId,
             total: total,
             desc: desc,
             obs: obs
