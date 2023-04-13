@@ -1,19 +1,19 @@
 import { Router } from "express";
 
-import { CreateCategoryController } from "./categoryControllers/CreateCategoryController";
-import { DeleteCategoryController } from "./categoryControllers/DeleteCategoryController";
-import { ListCategoryController } from "./categoryControllers/ListCategoryController";
-import { UpdateCategoryController } from "./categoryControllers/UpdateCategoryController";
+import { CreateCategoryController } from "./controllers/categoryControllers/CreateCategoryController";
+import { DeleteCategoryController } from "./controllers/categoryControllers/DeleteCategoryController";
+import { ListCategoryController } from "./controllers/categoryControllers/ListCategoryController";
+import { UpdateCategoryController } from "./controllers/categoryControllers/UpdateCategoryController";
 
-import { CreateProductController } from "./productControllers/CreateProductController";
-import { DeleteProductController } from "./productControllers/DeleteProductController";
-import { ListProductController } from "./productControllers/ListProductController";
-import { UpdateProductController } from "./productControllers/UpdateProductController";
+import { CreateProductController } from "./controllers/productControllers/CreateProductController";
+import { DeleteProductController } from "./controllers/productControllers/DeleteProductController";
+import { ListProductController } from "./controllers/productControllers/ListProductController";
+import { UpdateProductController } from "./controllers/productControllers/UpdateProductController";
 
-import { CreateSalesController } from "./salesControllers/CreateSalesController";
-import { DeleteSalesController } from "./salesControllers/DeleteSalesController";
-import { ListSalesController } from "./salesControllers/ListSalesController";
-import { UpdateSalesController } from "./salesControllers/UpdateSalesController";
+import { CreateSalesController } from "./controllers/salesControllers/CreateSalesController";
+import { DeleteSalesController } from "./controllers/salesControllers/DeleteSalesController";
+import { ListSalesController } from "./controllers/salesControllers/ListSalesController";
+import { UpdateSalesController } from "./controllers/salesControllers/UpdateSalesController";
 
 const createCategoryController = new CreateCategoryController();
 const deleteCategoryController = new DeleteCategoryController();
@@ -43,7 +43,7 @@ router.get("/products", listProductController.handle);
 router.put("/products", updateProductController.handle);
 
 router.post("/sales", createSalesController.handle);
-router.delete("/sales", deleteSalesController.handle);
+router.delete("/sales/:id", deleteSalesController.handle);
 router.get("/sales", listSalesController.handle);
 router.put("/sales", updateSalesController.handle);
 
