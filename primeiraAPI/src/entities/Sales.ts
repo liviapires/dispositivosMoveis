@@ -19,7 +19,7 @@ import {
       description!: string;
   
     @Column()
-      observarions!: string;
+      observations!: string;
   
     @CreateDateColumn()
       created_at!: Date;
