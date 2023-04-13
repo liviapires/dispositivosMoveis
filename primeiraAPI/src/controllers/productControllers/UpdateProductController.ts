@@ -1,17 +1,21 @@
 import { Request, Response } from 'express';
+import { UpdateProductService } from '../../services/productsServices/UpdateProductService';
 
 class UpdateProductController {
-    async handle(request: Request, response: Response) {
-        let product = {
-            "id":"1",
-            "name":"Banana",
-            "description":"Yellow fruit",
-            "price":"0.50",
-            "url":"www.banana.com"
-        }
+    async handle(request: Request, response: Response){
 
-        product = request.body;
-
+        const { id, name, description, price, url } = request.body;
+        
+        const updateProductService = new UpdateProductService();
+     
+        const product = await updateProductService.execute({
+          id,
+          name,
+          description,
+          price,
+          url,
+        });
+     
         return response.json(product);
     }
 }
