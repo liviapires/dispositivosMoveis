@@ -13,13 +13,13 @@ import {
     readonly id!: string ;
   
     @Column()
-      total!: string;
+      total!: number;
   
     @Column()
       description!: string;
   
     @Column()
-      observarion!: string;
+      observarions!: string;
   
     @CreateDateColumn()
       created_at!: Date;
