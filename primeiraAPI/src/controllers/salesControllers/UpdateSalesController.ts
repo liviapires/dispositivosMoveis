@@ -1,20 +1,21 @@
 import { Request, Response } from "express";
+import { UpdateSaleService } from "../../services/salesServices/UpdateSaleService";
 
 class UpdateSalesController {
     async handle(request: Request, response: Response){
 
-        let sales = {
-            "id":"1",
-            "productId":"2",
-            "userId":"7",
-            "total":"0.50",
-            "desc":"description about the sale",
-            "obs":"obs"
-        }
-
-        sales = request.body;
-
-        return response.json(sales);
+        const { id, total, description, observations } = request.body;
+        
+        const updateSaleService = new UpdateSaleService();
+     
+        const sale = await updateSaleService.execute({
+          id,
+          total,
+          description,
+          observations,
+        });
+     
+        return response.json(sale);
     }
 }
 
